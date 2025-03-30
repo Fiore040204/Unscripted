@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Musica – Unscripted</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #ffffff;
+      color: #222;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      text-decoration: none;
+      color: #222;
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .track {
+      margin-bottom: 1.5rem;
+    }
+
+    .track iframe {
+      width: 100%;
+      height: 150px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html">&larr; Torna alla home</a>
+  <h2>Musica</h2>
+
+  <div id="music-gallery"></div>
+
+  <script>
+    const musicGallery = document.getElementById("music-gallery");
+
+    // Inserisci qui gli ID dei brani Apple Music
+    const trackIds = [
+      // Esempio: '1650557842' (puoi aggiungerli manualmente)
+    ];
+
+    trackIds.forEach(id => {
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://embed.music.apple.com/it/album/${id}`;
+      const div = document.createElement("div");
+      div.className = "track";
+      div.appendChild(iframe);
+      musicGallery.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>

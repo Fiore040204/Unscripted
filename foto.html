@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foto – Unscripted</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #ffffff;
+      color: #222;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      color: #222;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .photo {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .photo img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 90vh;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html">&larr; Torna alla home</a>
+  <h2>Fotografie</h2>
+
+  <div id="gallery"></div>
+
+  <script>
+    const gallery = document.getElementById('gallery');
+
+    for (let i = 1; i <= 100; i++) {
+      const img = new Image();
+      img.src = `foto${i}.jpg`;
+      img.onload = function() {
+        const div = document.createElement('div');
+        div.className = 'photo';
+        div.appendChild(img);
+        gallery.appendChild(div);
+      };
+    }
+  </script>
+
+</body>
+</html>
