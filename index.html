@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Bacheca – Unscripted</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('bg-sughero.jpg');
+      background-size: cover;
+      font-family: 'Gloria Hallelujah', cursive;
+      overflow-x: hidden;
+    }
+
+    .post-it {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: #fffbc1;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+      padding: 0.5rem;
+      text-align: center;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #222;
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .post-it:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-4px) rotate(1deg); }
+    }
+
+    .p1 { top: 40px; left: 80px; }
+    .p2 { top: 180px; left: 220px; }
+    .p3 { top: 100px; right: 140px; }
+    .p4 { top: 260px; right: 40px; }
+    .p5 { top: 380px; left: 160px; }
+    .p6 { top: 450px; right: 180px; }
+
+  </style>
+</head>
+<body>
+
+  <a href="foto.html" class="post-it p1">[fotogrammi]</a>
+  <a href="video.html" class="post-it p2">[inquadra]</a>
+  <a href="musica.html" class="post-it p3">[ascolta]</a>
+  <a href="segni.html" class="post-it p4">[segni]</a>
+  <a href="note.html" class="post-it p5">[scrivo]</a>
+  <a href="manifesto.html" class="post-it p6">[manifesto]</a>
+
+</body>
+</html>
