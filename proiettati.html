@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>proiettati</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .grid {
+      column-count: 3;
+      column-gap: 1em;
+      padding: 1em;
+    }
+    .grid img {
+      width: 100%;
+      break-inside: avoid;
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body class="pagina">
+  <div class="grid" id="proiettati"></div>
+  <script>
+    fetch('proiettati.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('proiettati');
+        data.forEach(src => {
+          const img = document.createElement('img');
+          img.src = src;
+          container.appendChild(img);
+        });
+      });
+  </script>
+<a href="index.html" class="torna">torna alla bacheca</a>
+</body>
+</html>

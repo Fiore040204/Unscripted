@@ -1,0 +1,72 @@
+
+@font-face {
+  font-family: 'MyHandwriting';
+  src: url('Handwriting.ttf') format('truetype');
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'MyHandwriting', cursive;
+  background: #eae0d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.bacheca {
+  position: relative;
+  width: 90vw;
+  height: auto;
+  max-width: 1000px;
+  aspect-ratio: 3 / 2;
+  background: url('bacheca-sfondo.jpeg') no-repeat center center;
+  background-size: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border: 10px solid #c8c2ba;
+}
+
+.postit {
+  position: absolute;
+  padding: 0.5em;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  text-align: center;
+  transform: rotate(-1deg);
+  animation: ondeggia 3s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.3s);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.postit:link, .postit:visited, .postit:hover, .postit:active {
+  text-decoration: none;
+  color: #111;
+}
+
+.centrale {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  transform: translate(-50%, -50%) rotate(-2deg);
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  pointer-events: none;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 4px;
+}
+
+@keyframes ondeggia {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}

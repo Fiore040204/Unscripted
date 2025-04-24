@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>leggi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .scaffale {
+      display: flex;
+      overflow-x: auto;
+      padding: 1em;
+      border-bottom: 2px solid #ccc;
+    }
+    .scaffale img {
+      height: 150px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body class="pagina" id="leggi"><a href="index.html" class="torna">torna alla bacheca</a>
+</body>
+<script>
+fetch('leggi.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('leggi');
+    let scaffale = document.createElement('div');
+    scaffale.className = 'scaffale';
+    data.forEach((src, index) => {
+      const img = document.createElement('img');
+      img.src = src;
+      scaffale.appendChild(img);
+      if ((index + 1) % 6 === 0) {
+        container.appendChild(scaffale);
+        scaffale = document.createElement('div');
+        scaffale.className = 'scaffale';
+      }
+    });
+    container.appendChild(scaffale);
+  });
+</script>
+</html>
